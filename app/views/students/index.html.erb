@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Students</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Age</th>
+      <th>Telepon</th>
+      <th colspan="3">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% if @students.count==0%>
+    <tr>
+      <td colspan="5">Tidak ada data yang terdaftar</td>
+    </tr>
+  <% else %>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.address %></td>
+        <td><%= student.age %></td>
+        <td><%= student.telepon %></td>
+        <td><%= link_to 'Show', student %></td>
+        <td><%= link_to 'Edit', edit_student_path(student) %></td>
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'New Student', new_student_path %><br/>
+<%= link_to 'Home', Home %><br/>
+<%= link_to 'School', School %><br/>
+<%= link_to 'Log Out', destroy_user_session_path %>

@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <b>student id:</b>
+  <%= @home.student_id %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @home.address %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @home.name %>
+</p>
+
+<p>
+  <strong>Telepon:</strong>
+  <%= @home.telepon %>
+</p>
+
+<%= link_to 'Edit', edit_home_path(@home) %> |
+<%= link_to 'Back', homes_path %>
